@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mdb-react-ui-kit": "^7.0.0",
+    "react-toastify": "^9.1.3"
+  }
+}
