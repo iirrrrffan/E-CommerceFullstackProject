@@ -80,7 +80,7 @@ module.exports={
         res.status(201).json({
             status:"success",
             message:"successfully listed",
-            product
+            data:product
         })
         
     },

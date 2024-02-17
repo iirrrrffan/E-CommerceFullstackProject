@@ -63,11 +63,12 @@ module.exports = {
         
         // create product----
         createProduct : async (req,res)=>{
-            const {title,description,price,image,category} = req.body ;
+            const {title,description,price,image,category,oldprice} = req.body ;
           
             const data = await Product.create ({
                 title ,
                 description,
+                oldprice,
                 price,
                 image,
                 category,
