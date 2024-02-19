@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt')
 const userSchema = new mongoose.Schema({
     name : String,
-    email :String,
+    email :String,         
     username: String,   
     password : String,
     cart : [{type : mongoose.Schema.ObjectId,ref : "product"}],

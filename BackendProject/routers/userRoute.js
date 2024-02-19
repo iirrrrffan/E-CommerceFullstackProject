@@ -5,16 +5,18 @@ const userController=require("../contoller/userController")
  const varifyTocken = require("../middleware/userAuthMiddleware")
 
 
+//   .use(varifyTocken)
  userRouter.post("/register",trycatch(userController.createUser))
  userRouter.post("/login",trycatch(userController.userLogin))
  userRouter.get("/products",varifyTocken,trycatch(userController.productList))
+ userRouter.get("/products/:id",trycatch(userController.productGetById))
+
  
- userRouter.get("/products/:id",varifyTocken,trycatch(userController.productGetById))
  userRouter.get("/products/category/:categoryname",varifyTocken,trycatch(userController.ProductByCategory))
- userRouter.post("/:id/cart",varifyTocken,trycatch(userController.addToCart)) 
-userRouter.delete("/:id/cart",varifyTocken,trycatch(userController.deleteFromCart))
-.use(varifyTocken)
-userRouter.get("/:id/cart",varifyTocken,trycatch(userController.showCart))
+ userRouter.post("/:id/cart",trycatch(userController.addToCart)) 
+userRouter.delete("/:id/cart",trycatch(userController.deleteFromCart))
+
+userRouter.get("/:id/cart",trycatch(userController.showCart))
 
 // -----------------------------------------
 userRouter.post("/:id/wishList",varifyTocken,trycatch(userController.wishList))

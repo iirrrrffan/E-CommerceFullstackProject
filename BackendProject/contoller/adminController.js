@@ -131,7 +131,7 @@ module.exports = {
       },
       
       updateProduct: async (req, res) => {
-        const { title, description, image, price, category, id } = req.body;
+        const { title, description, image, price, category, id, oldprice } = req.body;
         const product = await Product.findById(id);
         if (!product) {
           return res.status(404).json({ error: "Product not found" });

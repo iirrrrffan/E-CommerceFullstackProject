@@ -44,6 +44,10 @@ module.exports={
                 message:"not a user"
             })
         }
+
+         const username1 = user.username
+         const user1 = user._id
+
         if(!password || !user.password){
             res.status(400).json({
                 status:error,
@@ -64,8 +68,10 @@ module.exports={
         )
            res.status(200).json({
             status:"success",
-            message:"login success",
-            data:token
+            message:"login success",     
+            data:token,
+            username:username1,
+            userId:user1
            })
      
     },
@@ -92,7 +98,7 @@ module.exports={
         if(!productId){
           res.status(404).json({error : "error in fetching"})
         }
-        res.status(201).json({
+        res.status(20).json({
           status : "success",
           message : "product succesfully fetched",
           data : productId
