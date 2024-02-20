@@ -19,7 +19,7 @@ userRouter.delete("/:id/cart",trycatch(userController.deleteFromCart))
 userRouter.get("/:id/cart",trycatch(userController.showCart))
 
 // -----------------------------------------
-userRouter.post("/:id/wishList",varifyTocken,trycatch(userController.wishList))
+userRouter.post("/:id/addtowishList",varifyTocken,trycatch(userController.addWishList))
 userRouter.get("/:id/wishList",varifyTocken,trycatch(userController.showWishList))
 userRouter.delete("/:id/wishList",varifyTocken,trycatch(userController.deleteWishList))
 userRouter.post("/:id/payment",varifyTocken,trycatch(userController.payment))

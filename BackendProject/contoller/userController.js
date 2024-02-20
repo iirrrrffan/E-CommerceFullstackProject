@@ -157,7 +157,7 @@ module.exports={
       });
     },
 
-    wishList : async (req,res)=>{
+    addWishList : async (req,res)=>{
       const userId = req.params.id;
       const productId = req.body.productId;
       console.log(productId);
@@ -167,7 +167,7 @@ module.exports={
       )
 
       res.status(201).json({
-        status :"success",
+        status :"success", 
         message : "product added to wish list "
       })
     },
