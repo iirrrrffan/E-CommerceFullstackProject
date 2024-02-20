@@ -8,7 +8,7 @@ const userController=require("../contoller/userController")
 //   .use(varifyTocken)
  userRouter.post("/register",trycatch(userController.createUser))
  userRouter.post("/login",trycatch(userController.userLogin))
- userRouter.get("/products",varifyTocken,trycatch(userController.productList))
+ userRouter.get("/products",trycatch(userController.productList))
  userRouter.get("/products/:id",trycatch(userController.productGetById))
 
  

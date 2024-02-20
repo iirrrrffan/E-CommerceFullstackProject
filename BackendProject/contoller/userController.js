@@ -98,7 +98,7 @@ module.exports={
         if(!productId){
           res.status(404).json({error : "error in fetching"})
         }
-        res.status(20).json({
+        res.status(200).json({
           status : "success",
           message : "product succesfully fetched",
           data : productId
@@ -134,6 +134,8 @@ module.exports={
     deleteFromCart : async (req,res)=>{
       const userId = req.params.id;
       const productId = req.body.productId;
+      console.log(productId,"qqqq");
+
       await Users.updateOne({_id : userId},{$pull:{cart : productId}})
       res.status(201).json({
         status : "success",
