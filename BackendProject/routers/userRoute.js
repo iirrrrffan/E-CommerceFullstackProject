@@ -25,7 +25,7 @@ userRouter.delete("/:id/wishList",varifyTocken,trycatch(userController.deleteWis
 userRouter.post("/:id/payment",varifyTocken,trycatch(userController.payment))
 userRouter.get('/payment/success',varifyTocken,trycatch(userController.success))
 userRouter.post('/payment/cancel',varifyTocken,trycatch(userController.cancel))
-userRouter.get('/:id/order',varifyTocken,trycatch(userController.showOrders))
+userRouter.get('/order',varifyTocken,trycatch(userController.showOrders))
 
 
  module.exports=userRouter; 

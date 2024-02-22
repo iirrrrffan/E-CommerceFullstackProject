@@ -53,7 +53,7 @@ module.exports = {
                 status:"error",
                 message:"not an user"
             })
-           }
+           } 
            res.status(200).json({
             status:"success",
             message:"successfully fetched user By ID",
@@ -132,6 +132,7 @@ module.exports = {
       
       updateProduct: async (req, res) => {
         const { title, description, image, price, category, id, oldprice } = req.body;
+        console.log(title)
         const product = await Product.findById(id);
         if (!product) {
           return res.status(404).json({ error: "Product not found" });
@@ -142,6 +143,7 @@ module.exports = {
             $set: {
               title: title,
               description: description,
+              oldprice:oldprice,
               price: price,
               image: image,
               category: category,

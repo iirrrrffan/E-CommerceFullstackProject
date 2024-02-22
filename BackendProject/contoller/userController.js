@@ -13,6 +13,8 @@ const mongoose = require("mongoose")
 module.exports={
     createUser:async(req,res)=>{
         const {username,email,password}=req.body;
+
+        console.log(req.body,"www");
  
         await Users.create({
           
@@ -224,7 +226,7 @@ module.exports={
       payment_method_types: ["card"], //steripe session -----
       line_items: lineItems,
       mode: "payment",
-      success_url: `http://localhost:3003/api/users/payment/success`, //success route
+      success_url: `http://localhost:3001/api/users/payment/success`, //success route
       cancel_url: "http://localhost:3003/api/users/payment/cancel", //cancel route
     });
 
